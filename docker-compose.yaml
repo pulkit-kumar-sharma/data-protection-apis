@@ -1,0 +1,32 @@
+version: '3.6'
+services:
+  app:
+    image: 'data_protection_apis:latest'
+    build:
+      context: .
+    container_name: Data_Protection_API_Service
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://Data_Protection_APIs_Postgres_Container:5432/${POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "8080:8080"
+
+  postgres:
+    image: postgres
+    container_name: Data_Protection_APIs_Postgres_Container
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - ./sqlScripts/dbinit.sql:/docker-entrypoint-initdb.d/dbinit.sql
+      - postgres_data:/var/lib/postgresql/data
+
+    ports:
+      - "7777:5432"
+volumes:
+  postgres_data:
