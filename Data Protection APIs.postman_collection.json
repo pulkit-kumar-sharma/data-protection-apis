@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "2a39e2a2-545e-490b-acfb-80cd7834d536",
+		"name": "Data Protection APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tokenize",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/tokenize/Pulkit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"tokenize",
+						"Pulkit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeTokenize",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/deTokenize/5UlKo3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"deTokenize",
+						"5UlKo3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
