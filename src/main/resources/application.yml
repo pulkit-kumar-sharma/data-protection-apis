@@ -7,3 +7,6 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:admin}
     password: ${SPRING_DATASOURCE_PASSWORD:superdooper}
     platform: postgresql
+
+server:
+  port: 8090
