@@ -1,5 +1,6 @@
 package com.pulkit.dataprotection.service;
 
+import com.pulkit.dataprotection.exception.DataProtectionException;
 import com.pulkit.dataprotection.repository.TokenizationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,7 @@ public class TokenizationService {
             return tokenizationRepository.getOriginalValue(inputString);
         }
         else {
-            return "No Value Exist For Token : " + inputString;
+            throw new DataProtectionException("No Value Exist For Token : " + inputString);
         }
     }
 
