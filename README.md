@@ -8,5 +8,6 @@
 
 ## Local Setup
 ```
+docker build -t data_protection_apis:latest .
 docker-compose up
 ```
