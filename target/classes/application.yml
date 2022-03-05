@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: data-protection-apis
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:7777/MyDatabase}
+    username: ${SPRING_DATASOURCE_USERNAME:admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:superdooper}
+    platform: postgresql
+
+server:
+  port: 8090
