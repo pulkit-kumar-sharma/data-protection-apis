@@ -11,3 +11,6 @@
 docker build -t data_protection_apis:latest .
 docker-compose up
 ```
+
+## Note
+* Maximum length of text it can tokenize is 100 characters.
